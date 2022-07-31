@@ -1,5 +1,5 @@
 const express = require('express');
-const adminRoutes = require('./routes/admin');
+const adminData = require('./routes/admin');
 const shoproutes = require('./routes/shop');
 const path = require('path');
 
@@ -11,7 +11,7 @@ const port = 3000;
 app.use(bodyParser.urlencoded());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/admin', adminRoutes);
+app.use('/admin', adminData.routes);
 app.use('/', shoproutes);
 
 //404 error at any incorrect path
