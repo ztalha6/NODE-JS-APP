@@ -7,7 +7,7 @@ router.get('/add-product', (req, res) => {
     res.sendFile(path.join(rootDir, 'views', 'add-product.html'));
 })
 
-router.post('/product', (req, res) => {
+router.post('/add-product', (req, res) => {
     const { name, description } = req.body;
     console.log(req.body);
     res.send(`Name ${name}, desc ${description}`);
