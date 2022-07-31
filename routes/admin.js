@@ -10,7 +10,7 @@ router.get('/add-product', (req, res) => {
 router.post('/add-product', (req, res) => {
     const { name, description } = req.body;
     console.log(req.body);
-    res.send(`Name ${name}, desc ${description}`);
+    res.sendFile(path.join(rootDir, 'views', 'shop.html'));
 });
 
 module.exports = router;
