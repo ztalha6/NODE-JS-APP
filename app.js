@@ -8,6 +8,9 @@ const bodyParser = require('body-parser');
 const app = express();
 const port = 3000;
 
+app.set('view engine', 'pug');
+app.set('views', 'views');
+
 app.use(bodyParser.urlencoded());
 app.use(express.static(path.join(__dirname, 'public')));
 
