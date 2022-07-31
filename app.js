@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/admin', adminRoutes);
-app.use('/shop', shoproutes);
+app.use('/', shoproutes);
 
 //404 error at any incorrect path
 app.use((req, res) => {
