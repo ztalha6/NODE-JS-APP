@@ -19,7 +19,9 @@ app.use('/', shoproutes);
 
 //404 error at any incorrect path
 app.use((req, res) => {
-    res.status(404).render('not-found');
+    res.status(404).render('not-found', {
+        pageTitle: "Page not Found"
+    });
 });
 
 app.listen(port, () => console.log(`Server running on port http://127.0.0.1:${port}`))
