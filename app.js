@@ -2,20 +2,13 @@ const express = require('express');
 const adminData = require('./routes/admin');
 const shoproutes = require('./routes/shop');
 const path = require('path');
-const expressHbs = require('express-handlebars');
 
 const bodyParser = require('body-parser');
 
 const app = express();
 const port = 3000;
 
-app.engine(
-    'hbs',
-    expressHbs({
-        layoutsDir: 'views/layouts/', defaultLayout: 'main-layout', extname: 'hbs',
-    })
-);
-app.set('view engine', 'hbs');
+app.set('view engine', 'ejs');
 app.set('views', 'views');
 
 app.use(bodyParser.urlencoded());
