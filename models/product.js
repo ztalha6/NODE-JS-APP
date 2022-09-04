@@ -22,14 +22,14 @@ module.exports = class Product {
         products.push(this);
     }
 
-    static fetchAll() {
+    static fetchAll(callBack) {
         const p = path.join(path.dirname(require.main.filename),
             'data',
             'products.json'
         );
         fs.readFile(p, (err, fileContent) => {
-            if (err) return [];
-            return JSON.parse(fileContent);
+            if (err) callBack([]);
+            callBack(JSON.parse(fileContent));
         });
     }
 }
